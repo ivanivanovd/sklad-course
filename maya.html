@@ -114,11 +114,9 @@
     .audience { padding-bottom: 70px; }
     .audience-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
     .audience-card { position: relative; min-height: 260px; padding: 32px 34px; border-radius: var(--radius); }
-    .audience-card::before { position: absolute; top: -8px; left: 46px; width: 72px; height: 17px; transform: rotate(-4deg); background: rgba(193,219,232,.88); box-shadow: 0 3px 7px rgba(67,48,46,.08); content: ""; }
     .audience-card::after { position: absolute; right: 18px; bottom: 15px; display: grid; width: 28px; height: 28px; place-items: center; transform: rotate(8deg); border-radius: 50%; background: var(--paper); color: var(--plum); box-shadow: 0 3px 8px rgba(67,48,46,.1); content: "✦"; font-size: .8rem; }
     .audience-card.adults { background: var(--yellow); }
     .audience-card.teens { background: #e6f0f3; }
-    .audience-card.teens::before { background: rgba(255,241,181,.9); }
     .audience-card p { max-width: 420px; margin-bottom: 0; color: var(--muted); }
     .card-kicker { margin-bottom: 19px; color: var(--plum); font-size: .75rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
     .card-sticker { position: absolute; top: 14px; right: 16px; padding: 5px 10px; transform: rotate(4deg); border: 1px solid rgba(110,30,59,.15); border-radius: 2px; background: var(--paper); color: var(--plum); box-shadow: 0 3px 8px rgba(67,48,46,.08); font: italic .8rem var(--serif); }
@@ -151,7 +149,6 @@
     .faq::before { position: absolute; top: 44px; right: max(24px, calc((100vw - 1120px) / 2)); z-index: 2; padding: 7px 12px; transform: rotate(3deg); background: var(--yellow); color: var(--plum); box-shadow: 0 5px 14px rgba(67,48,46,.08); content: "можно спросить"; font: italic .88rem var(--serif); }
     .faq::after { position: absolute; top: 37px; right: max(42px, calc((100vw - 1120px) / 2 + 22px)); z-index: 1; width: 48px; height: 14px; transform: rotate(-8deg); background: rgba(193,219,232,.9); content: ""; }
     .faq .section-intro { position: relative; }
-    .faq-note { display: inline-block; margin-top: -5px; padding: 6px 11px; transform: rotate(-2deg); background: var(--blue); color: var(--plum); box-shadow: 0 4px 9px rgba(67,48,46,.08); font: italic .88rem var(--serif); }
     .faq-list { max-width: 800px; border-top: 1px solid var(--line); }
     .faq details { border-bottom: 1px solid var(--line); }
     .faq summary { position: relative; padding: 20px 42px 20px 0; cursor: pointer; list-style: none; font: 1.4rem var(--serif); }
@@ -335,7 +332,6 @@
         <div class="section-intro">
           <div class="eyebrow">Перед первым уроком</div>
           <h2 id="faq-title">Частые вопросы</h2>
-          <span class="faq-note">можно уточнить всё, что волнует</span>
         </div>
         <div class="faq-list">
           <details><summary>Можно прийти, если я совсем не знаю английский?</summary><p>Да. Майя занимается с начинающими и продолжающими. На первом занятии можно обсудить, с чего начать и к чему вы хотите прийти.</p></details>
