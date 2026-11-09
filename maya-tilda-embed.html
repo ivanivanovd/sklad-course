@@ -85,6 +85,7 @@
     .section { padding: 104px 0; }
     .section-intro { max-width: 660px; margin-bottom: 38px; }
     .about { position: relative; background: var(--blue); }
+    .about::after { position: absolute; right: max(24px, calc((100vw - 1120px) / 2 + 18px)); bottom: -13px; z-index: 2; padding: 7px 14px; transform: rotate(-3deg); background: var(--olive); color: white; box-shadow: 0 5px 14px rgba(67,48,46,.13); content: "листай дальше →"; font: italic .9rem var(--serif); }
     .about-sheet {
       position: relative; max-width: 980px; margin: auto; padding: 52px 62px 50px 84px;
       border-radius: 6px; background: var(--paper); box-shadow: var(--shadow);
@@ -105,10 +106,13 @@
     .audience { padding-bottom: 70px; }
     .audience-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
     .audience-card { min-height: 260px; padding: 32px 34px; border-radius: var(--radius); }
+    .audience-card { position: relative; }
     .audience-card.adults { background: var(--yellow); }
     .audience-card.teens { background: #e6f0f3; }
     .audience-card p { max-width: 420px; margin-bottom: 0; color: var(--muted); }
     .card-kicker { margin-bottom: 19px; color: var(--plum); font-size: .75rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .card-sticker { position: absolute; top: 14px; right: 16px; padding: 5px 10px; transform: rotate(4deg); border: 1px solid rgba(110,30,59,.15); border-radius: 2px; background: var(--paper); color: var(--plum); box-shadow: 0 3px 8px rgba(67,48,46,.08); font: italic .8rem var(--serif); }
+    .teens .card-sticker { transform: rotate(-3deg); background: var(--yellow); }
     .format { position: relative; padding: 74px 0 76px; background: var(--paper-deep); }
     .format::before { position: absolute; top: -8px; left: 12%; width: 112px; height: 16px; transform: rotate(-3deg); background: repeating-linear-gradient(90deg, var(--blue) 0 14px, var(--paper) 14px 28px); box-shadow: 0 3px 8px rgba(67,48,46,.08); content: ""; }
     .format-heading { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 32px; }
@@ -121,6 +125,7 @@
     .format-item p { margin: 0; color: var(--muted); font-size: .93rem; }
     .learning { padding-top: 104px; }
     .learning-panel { position: relative; overflow: hidden; padding: 54px 62px 58px; border-radius: 6px; background: var(--paper); box-shadow: var(--shadow); }
+    .learning-sticker { position: absolute; top: 19px; right: 30px; z-index: 1; padding: 8px 13px; transform: rotate(5deg); background: var(--blue); color: var(--plum); box-shadow: 0 4px 10px rgba(67,48,46,.08); font: italic .94rem var(--serif); }
     .learning-panel::before { content: ""; position: absolute; inset: 0; z-index: 0; background-image: repeating-linear-gradient(0deg, transparent 0 39px, rgba(193,219,232,.5) 39px 40px); pointer-events: none; }
     .learning-panel > * { position: relative; }
     .learning-panel .section-intro { margin-bottom: 28px; }
@@ -159,6 +164,7 @@
       .about-sheet { padding: 44px 25px 38px 55px; }
       .about-sheet::before { left: 14px; }
       .about-layout { grid-template-columns: 1fr; gap: 25px; }
+      .about::after { right: 22px; }
       .about-aside { grid-template-columns: 150px 1fr; align-items: center; gap: 18px; }
       .portrait-photo { width: 138px; padding: 7px 7px 20px; }
       .portrait-photo img { width: 124px; height: 125px; }
@@ -166,6 +172,7 @@
       .margin-note { justify-self: start; width: min(100%, 190px); }
       .audience-grid { grid-template-columns: 1fr; gap: 14px; }
       .audience-card { min-height: 0; padding: 26px; }
+      .card-sticker { top: 10px; right: 11px; font-size: .72rem; }
       .format { padding: 58px 0; }
       .format-heading { display: block; }
       .format-heading p { margin-top: 14px; }
@@ -174,6 +181,7 @@
       .format-item + .format-item { border-top: 1px solid var(--line); }
       .learning { padding-top: 72px; }
       .learning-panel { padding: 36px 25px; }
+      .learning-sticker { top: 12px; right: 16px; padding: 6px 9px; font-size: .78rem; }
       .steps { grid-template-columns: 1fr; gap: 16px; }
       .step { padding-top: 12px; }
       .step b { margin-bottom: 5px; }
@@ -246,11 +254,13 @@
         </div>
         <div class="audience-grid">
           <article class="audience-card adults">
+            <span class="card-sticker" aria-hidden="true">for your goals</span>
             <div class="card-kicker">Для взрослых</div>
             <h3>Для работы, поездок и общения</h3>
             <p>Если вы начинаете с нуля или хотите вернуться к английскому после перерыва — будем двигаться от вашего уровня и ваших задач.</p>
           </article>
           <article class="audience-card teens">
+            <span class="card-sticker" aria-hidden="true">you can ask</span>
             <div class="card-kicker">Для школьников</div>
             <h3>Чтобы разобраться со школьной программой</h3>
             <p>Разбираем темы, которые вызывают вопросы, и закрепляем материал на занятиях. Можно прийти с текущими школьными задачами.</p>
@@ -279,6 +289,7 @@
     <section class="learning section" aria-labelledby="learning-title">
       <div class="wrap">
         <div class="learning-panel">
+          <span class="learning-sticker" aria-hidden="true">keep going</span>
           <div class="section-intro">
             <div class="eyebrow">На занятии</div>
             <h2 id="learning-title">Разбираем, пробуем, закрепляем</h2>
