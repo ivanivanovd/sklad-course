@@ -124,7 +124,7 @@
     .format-item .number { color: var(--plum); font: italic 1.2rem var(--serif); }
     .format-item h3 { margin: 11px 0 5px; font-size: 1.4rem; }
     .format-item p { margin: 0; color: var(--muted); font-size: .93rem; }
-    .learning { padding-top: 104px; }
+    .learning { padding: 104px 0 78px; background: var(--blue); }
     .learning-panel { position: relative; overflow: hidden; padding: 54px 62px 58px; border-radius: 6px; background: var(--paper); box-shadow: var(--shadow); }
     .learning-sticker { position: relative; z-index: 1; display: table; margin: 0 0 18px auto; padding: 8px 13px; transform: rotate(5deg); background: var(--blue); color: var(--plum); box-shadow: 0 4px 10px rgba(67,48,46,.08); font: italic .94rem var(--serif); }
     .learning-panel::before { content: ""; position: absolute; inset: 0; z-index: 0; background-image: repeating-linear-gradient(0deg, transparent 0 39px, rgba(193,219,232,.5) 39px 40px); pointer-events: none; }
@@ -134,10 +134,13 @@
     .step { padding-top: 17px; border-top: 1px solid rgba(67,48,46,.3); }
     .step b { display: block; margin-bottom: 12px; color: var(--plum); font: italic 1.1rem var(--serif); }
     .step p { margin: 0; font-weight: 650; }
+    .section-wave { height: 42px; margin-top: -1px; background: var(--paper); }
+    .section-wave svg { display: block; width: 100%; height: 100%; }
+    .section-wave path { fill: var(--blue); stroke: var(--plum); stroke-width: 2; vector-effect: non-scaling-stroke; }
     .scribble-divider { position: relative; z-index: 3; width: min(1120px, calc(100% - 48px)); height: 42px; margin: -20px auto; pointer-events: none; }
     .scribble-divider svg { display: block; width: 100%; height: 100%; overflow: visible; }
     .scribble-divider path { fill: none; stroke: var(--plum); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; opacity: .82; }
-    .faq { position: relative; padding-top: 80px; }
+    .faq { position: relative; padding-top: 80px; background: var(--paper); }
     .faq::before { position: absolute; top: 44px; right: max(24px, calc((100vw - 1120px) / 2)); z-index: 2; padding: 7px 12px; transform: rotate(3deg); background: var(--yellow); color: var(--plum); box-shadow: 0 5px 14px rgba(67,48,46,.08); content: "можно спросить"; font: italic .88rem var(--serif); }
     .faq::after { position: absolute; top: 37px; right: max(42px, calc((100vw - 1120px) / 2 + 22px)); z-index: 1; width: 48px; height: 14px; transform: rotate(-8deg); background: rgba(193,219,232,.9); content: ""; }
     .faq .section-intro { position: relative; }
@@ -184,10 +187,11 @@
       .format-grid { grid-template-columns: 1fr; }
       .format-item, .format-item + .format-item { min-height: 0; padding: 19px 0; border-left: 0; }
       .format-item + .format-item { border-top: 1px solid var(--line); }
-      .learning { padding-top: 72px; }
+      .learning { padding: 72px 0 58px; }
       .learning-panel { padding: 36px 25px; }
       .learning-sticker { margin: 0 0 15px auto; padding: 6px 9px; font-size: .78rem; }
       .scribble-divider { width: calc(100% - 38px); height: 30px; margin: -14px auto; }
+      .section-wave { height: 28px; }
       .steps { grid-template-columns: 1fr; gap: 16px; }
       .step { padding-top: 12px; }
       .step b { margin-bottom: 5px; }
@@ -317,6 +321,10 @@
         </div>
       </div>
     </section>
+
+    <div class="section-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 42" preserveAspectRatio="none"><path d="M0 0H1440V17C1320 35 1200 5 1080 18S840 34 720 17 480 5 360 18 120 35 0 17Z" /></svg>
+    </div>
 
     <section class="faq section" aria-labelledby="faq-title">
       <div class="wrap">
