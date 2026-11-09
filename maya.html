@@ -142,9 +142,10 @@
     .step { padding-top: 17px; border-top: 1px solid rgba(67,48,46,.3); }
     .step b { display: block; margin-bottom: 12px; color: var(--plum); font: italic 1.1rem var(--serif); }
     .step p { margin: 0; font-weight: 650; }
-    .section-wave { height: 42px; margin-top: -1px; background: var(--paper); }
+    .section-wave { height: 108px; margin-top: -1px; background: var(--paper); }
     .section-wave svg { display: block; width: 100%; height: 100%; }
-    .section-wave path { fill: var(--blue); stroke: var(--plum); stroke-width: 2; vector-effect: non-scaling-stroke; }
+    .section-wave path { fill: var(--blue); stroke: none; }
+    .section-wave .wave-line { fill: none; stroke: var(--plum); stroke-width: 2; vector-effect: non-scaling-stroke; }
     .scribble-divider { position: relative; z-index: 3; width: min(1120px, calc(100% - 48px)); height: 42px; margin: -20px auto; pointer-events: none; }
     .scribble-divider svg { display: block; width: 100%; height: 100%; overflow: visible; }
     .scribble-divider path { fill: none; stroke: var(--plum); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; opacity: .82; }
@@ -199,7 +200,7 @@
       .learning-panel { padding: 36px 25px; }
       .learning-sticker { margin: 0 0 15px auto; padding: 6px 9px; font-size: .78rem; }
       .scribble-divider { width: calc(100% - 38px); height: 30px; margin: -14px auto; }
-      .section-wave { height: 28px; }
+      .section-wave { height: 64px; }
       .steps { grid-template-columns: 1fr; gap: 16px; }
       .step { padding-top: 12px; }
       .step b { margin-bottom: 5px; }
@@ -332,7 +333,10 @@
     </section>
 
     <div class="section-wave" aria-hidden="true">
-      <svg viewBox="0 0 1440 42" preserveAspectRatio="none"><path d="M0 0H1440V17C1320 35 1200 5 1080 18S840 34 720 17 480 5 360 18 120 35 0 17Z" /></svg>
+      <svg viewBox="0 0 1440 108" preserveAspectRatio="none">
+        <path d="M0 0H1440V35C1320 72 1200 72 1080 35S840 -2 720 35 480 72 360 35 120 -2 0 35Z" />
+        <path class="wave-line" d="M0 35C120 72 240 72 360 35S600 -2 720 35 960 72 1080 35 1320 -2 1440 35" />
+      </svg>
     </div>
 
     <section class="faq section" aria-labelledby="faq-title">
