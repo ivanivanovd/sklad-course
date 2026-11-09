@@ -93,7 +93,6 @@
     .section { padding: 104px 0; }
     .section-intro { max-width: 660px; margin-bottom: 38px; }
     .about { position: relative; background: var(--blue); }
-    .about::after { position: absolute; right: max(24px, calc((100vw - 1120px) / 2 + 18px)); bottom: -66px; z-index: 2; padding: 7px 14px; transform: rotate(-1deg); background: var(--olive); color: white; box-shadow: 0 5px 14px rgba(67,48,46,.13); content: "листай дальше →"; font: italic .9rem var(--serif); }
     .about-sheet {
       position: relative; max-width: 980px; margin: auto; padding: 52px 62px 50px 84px;
       border-radius: 6px; background: var(--paper); box-shadow: var(--shadow);
@@ -114,16 +113,19 @@
     .margin-note { width: 180px; padding: 18px 14px; transform: rotate(3deg); background: var(--yellow); color: var(--plum); box-shadow: 0 8px 18px rgba(67,48,46,.1); font: italic 1.15rem/1.3 var(--serif); text-align: center; }
     .audience { padding-bottom: 70px; }
     .audience-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
-    .audience-card { min-height: 260px; padding: 32px 34px; border-radius: var(--radius); }
-    .audience-card { position: relative; }
+    .audience-card { position: relative; min-height: 260px; padding: 32px 34px; border-radius: var(--radius); }
+    .audience-card::before { position: absolute; top: -8px; left: 46px; width: 72px; height: 17px; transform: rotate(-4deg); background: rgba(193,219,232,.88); box-shadow: 0 3px 7px rgba(67,48,46,.08); content: ""; }
+    .audience-card::after { position: absolute; right: 18px; bottom: 15px; display: grid; width: 28px; height: 28px; place-items: center; transform: rotate(8deg); border-radius: 50%; background: var(--paper); color: var(--plum); box-shadow: 0 3px 8px rgba(67,48,46,.1); content: "✦"; font-size: .8rem; }
     .audience-card.adults { background: var(--yellow); }
     .audience-card.teens { background: #e6f0f3; }
+    .audience-card.teens::before { background: rgba(255,241,181,.9); }
     .audience-card p { max-width: 420px; margin-bottom: 0; color: var(--muted); }
     .card-kicker { margin-bottom: 19px; color: var(--plum); font-size: .75rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
     .card-sticker { position: absolute; top: 14px; right: 16px; padding: 5px 10px; transform: rotate(4deg); border: 1px solid rgba(110,30,59,.15); border-radius: 2px; background: var(--paper); color: var(--plum); box-shadow: 0 3px 8px rgba(67,48,46,.08); font: italic .8rem var(--serif); }
     .teens .card-sticker { transform: rotate(-3deg); background: var(--yellow); }
     .format { position: relative; padding: 74px 0 76px; background: var(--paper-deep); }
-    .format::before { position: absolute; top: -8px; left: 12%; width: 112px; height: 16px; transform: rotate(-3deg); background: repeating-linear-gradient(90deg, var(--blue) 0 14px, var(--paper) 14px 28px); box-shadow: 0 3px 8px rgba(67,48,46,.08); content: ""; }
+    .format::before { position: absolute; top: -8px; left: 12%; width: 142px; height: 17px; transform: rotate(-3deg); background: repeating-linear-gradient(90deg, var(--blue) 0 14px, var(--paper) 14px 28px); box-shadow: 0 3px 8px rgba(67,48,46,.08); content: ""; }
+    .format::after { position: absolute; top: -7px; right: 17%; width: 82px; height: 15px; transform: rotate(4deg); background: repeating-linear-gradient(90deg, var(--yellow) 0 13px, var(--paper) 13px 26px); box-shadow: 0 3px 8px rgba(67,48,46,.07); content: ""; }
     .format-heading { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 32px; }
     .format-heading p { max-width: 390px; margin: 0 0 8px; color: var(--muted); }
     .format-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -145,9 +147,11 @@
     .scribble-divider { position: relative; z-index: 3; width: min(1120px, calc(100% - 48px)); height: 42px; margin: -20px auto; pointer-events: none; }
     .scribble-divider svg { display: block; width: 100%; height: 100%; overflow: visible; }
     .scribble-divider path { fill: none; stroke: var(--plum); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; opacity: .82; }
-    .scribble-divider .doodle-star { position: absolute; top: 2px; right: 13%; display: grid; width: 28px; height: 28px; place-items: center; transform: rotate(10deg); border-radius: 50%; background: var(--yellow); color: var(--plum); box-shadow: 0 3px 8px rgba(67,48,46,.1); font-size: .9rem; }
     .faq { position: relative; padding-top: 80px; }
-    .faq::before { position: absolute; top: 44px; right: max(24px, calc((100vw - 1120px) / 2)); padding: 7px 12px; transform: rotate(3deg); background: var(--yellow); color: var(--plum); box-shadow: 0 5px 14px rgba(67,48,46,.08); content: "можно спросить"; font: italic .88rem var(--serif); }
+    .faq::before { position: absolute; top: 44px; right: max(24px, calc((100vw - 1120px) / 2)); z-index: 2; padding: 7px 12px; transform: rotate(3deg); background: var(--yellow); color: var(--plum); box-shadow: 0 5px 14px rgba(67,48,46,.08); content: "можно спросить"; font: italic .88rem var(--serif); }
+    .faq::after { position: absolute; top: 37px; right: max(42px, calc((100vw - 1120px) / 2 + 22px)); z-index: 1; width: 48px; height: 14px; transform: rotate(-8deg); background: rgba(193,219,232,.9); content: ""; }
+    .faq .section-intro { position: relative; }
+    .faq-note { display: inline-block; margin-top: -5px; padding: 6px 11px; transform: rotate(-2deg); background: var(--blue); color: var(--plum); box-shadow: 0 4px 9px rgba(67,48,46,.08); font: italic .88rem var(--serif); }
     .faq-list { max-width: 800px; border-top: 1px solid var(--line); }
     .faq details { border-bottom: 1px solid var(--line); }
     .faq summary { position: relative; padding: 20px 42px 20px 0; cursor: pointer; list-style: none; font: 1.4rem var(--serif); }
@@ -177,7 +181,6 @@
       .about-sheet { padding: 44px 25px 38px 55px; }
       .about-sheet::before { left: 14px; }
       .about-layout { grid-template-columns: 1fr; gap: 25px; }
-      .about::after { right: 22px; }
       .about-aside { grid-template-columns: 150px 1fr; align-items: center; gap: 18px; }
       .portrait-photo { width: 138px; padding: 7px 7px 20px; }
       .portrait-photo img { width: 124px; height: 125px; }
@@ -201,6 +204,7 @@
       .step b { margin-bottom: 5px; }
       .faq { padding-top: 68px; }
       .faq::before { top: 27px; right: 22px; }
+      .faq::after { top: 20px; right: 39px; }
       .faq summary { font-size: 1.2rem; }
       .contact-dialog { padding: 34px 22px; }
       .phone-link { font-size: 1.35rem; }
@@ -265,7 +269,6 @@
         <path d="M12 26 C92 4 154 36 235 23 S365 10 449 25 S584 37 672 20 S818 8 900 23 S1030 32 1104 17" />
         <path d="M1091 9 L1105 17 L1090 24" />
       </svg>
-      <span class="doodle-star">✦</span>
     </div>
 
     <section class="audience section" aria-labelledby="audience-title">
@@ -332,6 +335,7 @@
         <div class="section-intro">
           <div class="eyebrow">Перед первым уроком</div>
           <h2 id="faq-title">Частые вопросы</h2>
+          <span class="faq-note">можно уточнить всё, что волнует</span>
         </div>
         <div class="faq-list">
           <details><summary>Можно прийти, если я совсем не знаю английский?</summary><p>Да. Майя занимается с начинающими и продолжающими. На первом занятии можно обсудить, с чего начать и к чему вы хотите прийти.</p></details>
